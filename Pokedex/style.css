@@ -4,7 +4,12 @@ html, body {
     background-color: lightsteelblue;
 }
 
+.my-pokedex {
+    padding: 0.5rem;
+}
+
 .a-pokemon {
+    margin: 0.3rem;
     display: grid;
     grid-template-columns: repeat(12, calc(100% / 12));
 }
