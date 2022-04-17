@@ -5,20 +5,23 @@ async function getAllPokemon() {
     return data;
 }
 
+function getPokemonHtml(aPokemon) {
+    return `
+        <div class="a-pokemon">
+            <div class="a-pokemon-id">${aPokemon.id}</div>
+
+            <div class="a-pokemon-name">${aPokemon.name.english}</div>
+            <div class="a-pokemon-type">${aPokemon.type.join(' / ')}</div>
+
+            <div class="a-pokemon-stat">HP: ${aPokemon.base.HP}</div>
+            <div class="a-pokemon-stat">Attack: ${aPokemon.base.Attack}</div>
+            <div class="a-pokemon-stat">Defense: ${aPokemon.base.Defense}</div>
+            <div class="a-pokemon-stat">Speed: ${aPokemon.base.Speed}</div>
+        </div>
+    `;
+}
+
 getAllPokemon().then(allPokemon => {
     let samplePokemon = allPokemon[0];
-
-    document.body.innerHTML = `
-        <div class="a-pokemon">
-            <div class="a-pokemon-id">${samplePokemon.id}</div>
-            
-            <div class="a-pokemon-name">${samplePokemon.name.english}</div>
-            <div class="a-pokemon-type">${samplePokemon.type.join(' / ')}</div>
-
-            <div class="a-pokemon-stat">${samplePokemon.base.HP}</div>
-            <div class="a-pokemon-stat">${samplePokemon.base.Attack}</div>
-            <div class="a-pokemon-stat">${samplePokemon.base.Defense}</div>
-            <div class="a-pokemon-stat">${samplePokemon.base.Speed}</div>
-        </div>
-    `
+    document.body.innerHTML = allPokemon.map(aPokemon => getPokemonHtml(aPokemon));
 })
