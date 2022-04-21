@@ -5,12 +5,18 @@ html, body {
     padding: 1rem;
 }
 
+.my-library {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .my-book {
     display: grid;
     grid-template-columns: 1rem 8rem;
     grid-template-areas:
         "spine cover"
-        "footer footer"
+        "footer footer";
+    margin: 0.2rem;
 }
 
 .my-book div {
@@ -37,4 +43,12 @@ html, body {
     padding: 0.2rem;
     background-color: lightgray;
     border-bottom-left-radius: 0.3rem;
+}
+
+.my-book:nth-of-type(even) .my-book-cover {
+    background-color: lightblue;
+}
+
+.my-book:nth-of-type(even) .my-book-spine {
+    background-color: #E1B07E;
 }
