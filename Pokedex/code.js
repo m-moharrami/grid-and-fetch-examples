@@ -17,6 +17,10 @@ function getPokemonHtml(aPokemon) {
             <div class="a-pokemon-stat">Attack: ${aPokemon.base.Attack}</div>
             <div class="a-pokemon-stat">Defense: ${aPokemon.base.Defense}</div>
             <div class="a-pokemon-stat">Speed: ${aPokemon.base.Speed}</div>
+
+            <div class="a-pokemon-jp">${aPokemon.name.japanese}</div>
+            <div class="a-pokemon-ch">${aPokemon.name.chinese}</div>
+            <div class="a-pokemon-fr">${aPokemon.name.french}</div>
         </div>
     `;
 }

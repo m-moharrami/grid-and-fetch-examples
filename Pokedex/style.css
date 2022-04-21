@@ -44,3 +44,18 @@ html, body {
     background-color: lightgreen;
     grid-column: span 3;
 }
+
+.a-pokemon-jp {
+    grid-column: span 4;
+    background-color: lightpink;
+}
+
+.a-pokemon-ch {
+    grid-column: span 4;
+    background-color: rgb(189, 140, 224);
+}
+
+.a-pokemon-fr {
+    grid-column: span 4;
+    background-color: lightpink;
+}
