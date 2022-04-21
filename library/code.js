@@ -9,14 +9,23 @@ async function getBooks() {
     })
 }
 
+function getBookHtml(book) {
+    return `
+    <div class="my-book">
+        <div class="my-book-cover">${book.title}</div>
+        <div class="my-book-spine"></div>
+        <div class="my-book-footer"></div>
+    </div>  
+    `
+}
+
 getBooks().then(books => {
     let sampleBook = books[0];
     console.log(sampleBook);
 
     document.body.innerHTML = `
-    <div class="my-book">
-        <div class="my-book-cover">${sampleBook.title}</div>
-        <div class="my-book-spine"></div>
-        <div class="my-book-footer"></div>
-    </div>`
+    <div class="my-library">
+        ${books.map(getBookHtml).join('')}
+    </div>
+    `
 })
