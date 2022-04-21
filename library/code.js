@@ -27,4 +27,6 @@ function displayLibrary(books) {
     `;
 }
 
-getBooks().then(displayLibrary);
+getBooks()
+    .then(displayLibrary)
+    .catch(e => console.log(e))
