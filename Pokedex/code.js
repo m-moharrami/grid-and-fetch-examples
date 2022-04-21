@@ -25,9 +25,11 @@ function getPokemonHtml(aPokemon) {
     `;
 }
 
-getAllPokemon().then(allPokemon => {
+function displayPokedex(allPokemon) {
     let samplePokemon = allPokemon[0];
     document.body.innerHTML = `<div class="my-pokedex">
         ${allPokemon.map(aPokemon => getPokemonHtml(aPokemon)).join('')}
-    </div>`
-})
+    </div>`;
+}
+
+getAllPokemon().then(displayPokedex);
