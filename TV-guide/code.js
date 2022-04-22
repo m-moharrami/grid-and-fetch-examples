@@ -20,5 +20,5 @@ findShow("office").then(show => {
                 return `<div class="my-show-season">Season ${season.number}</div>`
             }).join('')}
         </div>
-    `
+    `;
 })
